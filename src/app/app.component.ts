@@ -14,10 +14,8 @@ export interface Viedojuegos{
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-@Input()
 export class AppComponent {
   title = 'my-app';
-public animeFavorito = 'Dragon Ball';
 public listaVideojuegos: Viedojuegos[] = [];
 public listaTipos: any[] = [];
 public listaDuracion: any[] = [];
