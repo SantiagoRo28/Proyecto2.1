@@ -5,6 +5,8 @@ import { CargaComponent } from './carga/carga.component';
 import { ListasComponent } from './listas/listas.component';
 import { LoginComponent } from './login/login.component';
 
+
+
 const routes: Routes = [
   { path: 'lista', component: ListasComponent},
   { path: 'carga', component: CargaComponent},

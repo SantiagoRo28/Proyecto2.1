@@ -1,5 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 export interface Viedojuegos{
   titulo: string;
@@ -29,10 +33,14 @@ public borrarVideojuego(videojuegoAborrar:number){
   this.listaTipos.splice(videojuegoAborrar,1)
 };
 constructor(
+  private _router: Router,
  private firestore: AngularFirestore
 ) {
 }
 
+navigateToLogin(){
+  this._router.navigate(['login'])
+};
 
 public agregarVideojuego(): void {
   

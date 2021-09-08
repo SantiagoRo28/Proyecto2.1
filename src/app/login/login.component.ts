@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Router, ActivatedRoute } from '@angular/router';
 
 export interface Viedojuegos{
   titulo: string;
@@ -18,7 +19,9 @@ export interface Viedojuegos{
 export class LoginComponent implements OnInit {
 
   constructor(
-    private auth: AngularFireAuth
+    private _router: Router,
+    private _activatedRoute:ActivatedRoute,
+    private auth: AngularFireAuth,
   ) {
 
    }
