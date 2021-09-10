@@ -56,7 +56,8 @@ this.firestore.collection('videojuegos')
   titulo: this.videojuegosActual,
   genero: this.tipoDeVideojuego,
   horas: this.duracionDeVideojuego,
-  fechaAlta: new Date()
+  fechaAlta: new Date(),
+  imagen: this.imagenDelVideojuego,
 })
 };
 }
