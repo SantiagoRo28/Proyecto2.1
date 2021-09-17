@@ -18,6 +18,9 @@ export interface Viedojuegos{
 })
 export class LoginComponent implements OnInit {
 
+  username: string;
+  password: string;
+
   constructor(
     private _router: Router,
     private _activatedRoute:ActivatedRoute,
@@ -25,7 +28,6 @@ export class LoginComponent implements OnInit {
   ) {
 
    }
-
   ngOnInit(): void {
   }
 

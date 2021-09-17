@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     ListasComponent,
     CargaComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
