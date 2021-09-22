@@ -2,6 +2,43 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router, ActivatedRoute } from '@angular/router';
+import {Injectable} from "@angular/core";
+import {Observable} from "rxjs";
+
+export class LoginObject {
+
+  public username: string;
+  public password: string;
+
+  constructor() {}
+
+  login() {
+    console.log(this.username);
+    console.log(this.password);
+  }
+}
+
+export interface Viedojuegos{
+  titulo: string;
+  tipo: string;
+  duracion: string;
+  imagen: string;
+  creador: string;
+}
+
+export class Session {
+  public token: string;
+  public user: User;
+}
+
+export class User {
+  public id: number;
+  public name: string;
+  public surname: string;
+  public email: string;
+  public username: string;
+  public password?: string;
+}
 
 export interface Viedojuegos{
   titulo: string;
