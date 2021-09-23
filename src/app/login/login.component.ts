@@ -4,17 +4,24 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router, ActivatedRoute } from '@angular/router';
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
+import {HttpClient} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http'
+
+
 
 export class LoginObject {
 
-  public username: string;
-  public password: string;
+ username: string;
+ password: string;
+   email: string;
+
 
   constructor() {}
 
   login() {
     console.log(this.username);
     console.log(this.password);
+    console.log(this.email);
   }
 }
 
@@ -57,6 +64,7 @@ export class LoginComponent implements OnInit {
 
   username: string;
   password: string;
+  email: string;
 
   constructor(
     private _router: Router,
@@ -65,6 +73,7 @@ export class LoginComponent implements OnInit {
   ) {
 
    }
+   
   ngOnInit(): void {
   }
 
