@@ -79,6 +79,11 @@ export class LoginComponent implements OnInit {
 
 
   public login ():void {
+    this.auth.signInWithEmailAndPassword(this.email,this.password).then(()=>{
+      this._router.navigateByUrl("lista");
+    }).catch(()=>{
+      alert("Email o contraseña incorrecta")
+    })
     
   };
 

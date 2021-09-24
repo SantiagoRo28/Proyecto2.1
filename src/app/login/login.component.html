@@ -1,7 +1,7 @@
 <div class="contenedor fondo">
-<p  class="textopelicula">iniciar secion</p>
-<input class="nombrepelicula texto-nombre" type="text">
-<input class="borrar borrar-texto" type="password" [(ngModel)]="password" name="password" placeholder="Password" required="required">
-<button class="borrar borrar-texto" type="submit" (click)="login()">Iniciar Secion</button>
+<p  class="textopelicula">Iniciar sesion</p>
+<input class="nombrepelicula borrar-texto" type="email" placeholder="Email" name="email" [(ngModel)]="email" required="required"><br>
+<input class="nombrepelicula borrar-texto" type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required="required"><br>
+<button class="borrar borrar-texto" type="submit" (click)="login()">Iniciar Secion</button><br>
 <router-outlet></router-outlet>
 </div>

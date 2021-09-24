@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 
@@ -32,7 +33,8 @@ public borrarVideojuego(videojuegoAborrar:number){
 };
 constructor(
   private _router: Router,
- private firestore: AngularFirestore
+ private firestore: AngularFirestore,
+ private auth: AngularFireAuth,
 ) {
 }
   ngOnInit(): void {
@@ -41,9 +43,11 @@ constructor(
 
 navigateToLogin(){
   this._router.navigate(['login'])
+  this.auth.signOut();
 };
 
 public listarVideojuegos(): void {
+//, ref=> ref.where("id.tipo","==","id"
   this.firestore.collection<Viedojuegos>('videojuegos').valueChanges().subscribe(result=>{
     this.listaVideojuegos = result
   })

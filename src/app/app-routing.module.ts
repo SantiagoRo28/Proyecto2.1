@@ -6,6 +6,8 @@ import { CargaComponent } from './carga/carga.component';
 import { ListasComponent } from './listas/listas.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent} from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 const routes: Routes = [
