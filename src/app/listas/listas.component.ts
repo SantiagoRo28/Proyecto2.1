@@ -7,7 +7,7 @@ export interface Viedojuegos{
   titulo: string;
   tipo: string;
   duracion: string;
-  imagen: string;
+  imagen: File;
   creador: string;
 }
 
@@ -26,11 +26,9 @@ public videojuegosActual: string="";
 public tipoDeVideojuego: string="";
 public duracionDeVideojuego: number;
 public creadorDelVideojuego: string;
-public imagenDelVideojuego: string;
-public borrarVideojuego(videojuegoAborrar:number){
-  this.listaVideojuegos.splice(videojuegoAborrar, 1)
-  this.listaTipos.splice(videojuegoAborrar,1)
-};
+public imagenDelVideojuego: File;
+public id: number;
+
 constructor(
   private _router: Router,
  private firestore: AngularFirestore,
@@ -53,22 +51,29 @@ public listarVideojuegos(): void {
   })
 };
 
+public subirImagen(): void{
+  
+};
+
 public agregarVideojuego(): void {
   
-  this.firestore.collection('videojuegos').add({
-    titulo: this.videojuegosActual,
-    horas: this.duracionDeVideojuego,
-    fechaAlta: new Date()
-  }).then();
+
 
 this.firestore.collection('videojuegos')
 .doc(this.videojuegosActual)
 .set({
   titulo: this.videojuegosActual,
-  genero: this.tipoDeVideojuego,
-  horas: this.duracionDeVideojuego,
+  tipo: this.tipoDeVideojuego,
+  duracion: this.duracionDeVideojuego + " Hrs",
   fechaAlta: new Date(),
   imagen: this.imagenDelVideojuego,
-})
-};
+  creador: this.creadorDelVideojuego,
+})};
+
+public borrarVideojuego(): void {
+  
+  this.firestore.collection('videojuegos')
+  .doc(this.videojuegosActual)
+  .delete()};
+
 }
