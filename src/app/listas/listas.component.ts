@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-
+import { AngularFireStorage} from '@angular/fire/storage';
 export interface Viedojuegos{
   titulo: string;
   tipo: string;
@@ -33,6 +33,7 @@ constructor(
   private _router: Router,
  private firestore: AngularFirestore,
  private auth: AngularFireAuth,
+ private storage: AngularFireStorage,
 ) {
 }
   ngOnInit(): void {

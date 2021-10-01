@@ -8,7 +8,7 @@ import { CargaComponent } from './carga/carga.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
