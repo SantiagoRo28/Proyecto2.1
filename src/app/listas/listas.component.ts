@@ -3,6 +3,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { AngularFireStorage} from '@angular/fire/storage';
+import { ReactiveFormsModule } from '@angular/forms';
+
 export interface Viedojuegos{
   titulo: string;
   tipo: string;
@@ -26,7 +28,7 @@ public videojuegosActual: string="";
 public tipoDeVideojuego: string="";
 public duracionDeVideojuego: number;
 public creadorDelVideojuego: string;
-public imagenDelVideojuego: File;
+public imagenDelVideojuego: any;
 public id: number;
 
 constructor(
@@ -52,13 +54,18 @@ public listarVideojuegos(): void {
   })
 };
 
-public subirImagen(): void{
-  
+public seleccionarImagen(event: any): void{
+  this.imagenDelVideojuego = event.target.files;
 };
 
 public agregarVideojuego(): void {
   
 
+//const filePath = this.storage.ref("juegos/imagenes/" + this.tipoDeVideojuego + "/" + this.imagenDelVideojuego.name)
+
+const uploadFile = this.imagenDelVideojuego[0];
+
+this.storage.upload("juegos/imagenes/" + this.tipoDeVideojuego + "/1.png",uploadFile);
 
 this.firestore.collection('videojuegos')
 .doc(this.videojuegosActual)

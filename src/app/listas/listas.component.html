@@ -9,7 +9,7 @@
     <label> Creador del videojuego</label> <br>
     <input class="tipopelicula texto-tipo" [(ngModel)]="creadorDelVideojuego" type="text" /> <br>
     <label> Imagen del videojuego</label> <br>
-    <input class="tipopelicula texto-tipo" [(ngModel)]="imagenDelVideojuego" type="file" accept=".png, .jpg" /> <br>
+    <input class="tipopelicula texto-tipo" #file (change)="seleccionarImagen($event)" type="file" accept=".png, .jpg" /> <br>
 
     <button class="boton_rojo agregar" (click)="agregarVideojuego()">Agregar</button>
     <p class="textopelicula">El Videojuego</p>
