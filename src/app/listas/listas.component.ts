@@ -62,10 +62,12 @@ public agregarVideojuego(): void {
   
 
 //const filePath = this.storage.ref("juegos/imagenes/" + this.tipoDeVideojuego + "/" + this.imagenDelVideojuego.name)
+if(this.imagenDelVideojuego && this.imagenDelVideojuego.length > 0) {
+  const uploadFile = this.imagenDelVideojuego[0];
 
-const uploadFile = this.imagenDelVideojuego[0];
-
-this.storage.upload("juegos/imagenes/" + this.tipoDeVideojuego + "/1.png",uploadFile);
+  this.storage.upload("juegos/imagenes/" + this.tipoDeVideojuego + "/1.png",uploadFile);
+  
+}
 
 this.firestore.collection('videojuegos')
 .doc(this.videojuegosActual)
@@ -74,9 +76,10 @@ this.firestore.collection('videojuegos')
   tipo: this.tipoDeVideojuego,
   duracion: this.duracionDeVideojuego + " Hrs",
   fechaAlta: new Date(),
-  imagen: this.imagenDelVideojuego,
+  
   creador: this.creadorDelVideojuego,
 })};
+//imagen: this.imagenDelVideojuego,
 
 public borrarVideojuego(): void {
   
