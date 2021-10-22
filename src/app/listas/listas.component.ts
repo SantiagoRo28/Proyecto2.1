@@ -58,15 +58,24 @@ public seleccionarImagen(event: any): void{
   this.imagenDelVideojuego = event.target.files;
 };
 
-public agregarVideojuego(): void {
+public async agregarVideojuego(): Promise<void> {
   
 
 //const filePath = this.storage.ref("juegos/imagenes/" + this.tipoDeVideojuego + "/" + this.imagenDelVideojuego.name)
+
+let urlImage = '';
 if(this.imagenDelVideojuego && this.imagenDelVideojuego.length > 0) {
   const uploadFile = this.imagenDelVideojuego[0];
 
-  this.storage.upload("juegos/imagenes/" + this.tipoDeVideojuego + "/1.png",uploadFile);
-  
+  const path = "juegos/imagenes/" + this.tipoDeVideojuego + "/" + this.videojuegosActual + ".png";
+  const uploadTask = this.storage.upload(path,uploadFile);
+  const ref = this.storage.ref(path);
+  const uploadPercent = uploadTask.percentageChanges();
+
+  // upload image, save url
+  await uploadTask;
+  console.log('Image uploaded!');
+  urlImage = await ref.getDownloadURL().toPromise();
 }
 
 this.firestore.collection('videojuegos')
@@ -76,15 +85,15 @@ this.firestore.collection('videojuegos')
   tipo: this.tipoDeVideojuego,
   duracion: this.duracionDeVideojuego + " Hrs",
   fechaAlta: new Date(),
-  
+  imagen: urlImage,
   creador: this.creadorDelVideojuego,
 })};
 //imagen: this.imagenDelVideojuego,
 
-public borrarVideojuego(): void {
+public borrarVideojuego(videojuego: string): void {
   
   this.firestore.collection('videojuegos')
-  .doc(this.videojuegosActual)
+  .doc(videojuego)
   .delete()};
 
 }

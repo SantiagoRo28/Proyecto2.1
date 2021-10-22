@@ -1,5 +1,5 @@
 label{
-    color: red;
+    color: purple;
     text-shadow: 1px 1px 1px black;
     text-decoration: underline gold;
     -webkit-text-stroke: 0.7px black;
@@ -20,14 +20,21 @@ text-decoration: underline gold;
 -webkit-text-stroke: 0.7px black;
 }
 .fondo{
-background-color: rgb(204, 72, 24);
+background-color: rgb(255, 99, 27);
 height: 160vh;
 }
 .colorpelicula{
 color: gold;
+text-decoration: underline gold;
 text-shadow: 1px 1px 1px black;
 font-size: 3ch;
 -webkit-text-stroke: 0.7px black;
+}
+.colortitulojuego{
+    color: black;
+    text-shadow: 1px 1px 1px black;
+    font-size: 2.5ch;
+    -webkit-text-stroke: 0.7px black;
 }
 .borrar{
 background-color: red;

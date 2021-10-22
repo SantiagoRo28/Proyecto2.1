@@ -14,21 +14,21 @@
     <button class="boton_rojo agregar" (click)="agregarVideojuego()">Agregar</button>
     <p class="textopelicula">El Videojuego</p>
     <label class="texto-nombre"> Videojuegos agregados:</label>
-    <table class="colorpelicula" style="width:100%">
-        <tr>
+    <table style="width:100%">
+        <tr class="colorpelicula">
             <th>Nombre</th>
             <th>Tipo</th>
             <th>Duracion</th>
             <th>Creador</th>
             <th>Imagen</th>
         </tr>
-        <tr *ngFor="let Videojuegos of listaVideojuegos;">
+        <tr class="colortitulojuego" *ngFor="let Videojuegos of listaVideojuegos;">
             <td>{{Videojuegos.titulo}}</td>
             <td>{{Videojuegos.tipo}}</td>
             <td>{{Videojuegos.duracion}}</td>
             <td>{{Videojuegos.creador}}</td>
-            <td>{{Videojuegos.imagen}}</td>
-            <td><button class="borrar borrar-texto" (click)="borrarVideojuego()">Borrar</button></td>
+            <td><img [src]="Videojuegos.imagen" width="128"/></td>
+            <td><button class="borrar borrar-texto" (click)="borrarVideojuego(Videojuegos.titulo)">Borrar</button></td>
         </tr>
     </table>
 
