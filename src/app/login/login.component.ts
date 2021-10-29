@@ -14,6 +14,7 @@ export class LoginObject {
  username: string;
  password: string;
    email: string;
+   id: string;
 
 
   constructor() {}

@@ -1,5 +1,9 @@
 <div class="contenedor fondo">
 
+<div>
+    <button type="button" class="cerrar_sesion" (click)="navigateToLogin()">Cerrar sesion</button>
+</div>
+
     <label>Nombre del videojuego</label> <br>
     <input class="nombrepelicula texto-nombre" [(ngModel)]="videojuegosActual" type="text" /> <br>
     <label> Genero del videojuego</label> <br>
@@ -32,7 +36,4 @@
         </tr>
     </table>
 
-    <div>
-        <button type="button" class="borrar borrar-texto" (click)="navigateToLogin()">Cerrar sesion</button>
-    </div>
 </div>

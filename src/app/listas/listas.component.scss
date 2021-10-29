@@ -4,6 +4,14 @@ label{
     text-decoration: underline gold;
     -webkit-text-stroke: 0.7px black;
 }
+.cerrar_sesion{
+color: gold;
+background-color: red;
+font-size: 1.5ch;
+text-decoration: underline gold;
+text-shadow: 1px 1px 1px black;
+float: left;
+}
 .contenedor{
 text-align: center;
 border: 5px solid gold;
@@ -18,6 +26,7 @@ background-color: red;
 font-size: 2ch;
 text-decoration: underline gold;
 -webkit-text-stroke: 0.7px black;
+text-shadow: 1px 1px 1px black;
 }
 .fondo{
 background-color: rgb(255, 99, 27);
