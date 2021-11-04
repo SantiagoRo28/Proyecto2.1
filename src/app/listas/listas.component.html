@@ -2,7 +2,7 @@
 
 <div>
     <button type="button" class="cerrar_sesion" (click)="navigateToLogin()">Cerrar sesion</button>
-</div>
+</div><br>
 
     <label>Nombre del videojuego</label> <br>
     <input class="nombrepelicula texto-nombre" [(ngModel)]="videojuegosActual" type="text" /> <br>
@@ -13,7 +13,7 @@
     <label> Creador del videojuego</label> <br>
     <input class="tipopelicula texto-tipo" [(ngModel)]="creadorDelVideojuego" type="text" /> <br>
     <label> Imagen del videojuego</label> <br>
-    <input class="tipopelicula texto-tipo" #file (change)="seleccionarImagen($event)" type="file" accept=".png, .jpg" /> <br>
+    <input class="tipopelicula texto-tipo " #file (change)="seleccionarImagen($event)" type="file" accept=".png, .jpg" /> <br>
 
     <button class="boton_rojo agregar" (click)="agregarVideojuego()">Agregar</button>
     <p class="textopelicula">El Videojuego</p>
