@@ -1,1 +1,7 @@
-<p>register works!</p>
+<div class="contenedor fondo">
+    <p  class="textopelicula">Registrarce</p>
+    <input class="nombrepelicula borrar-texto" type="email" placeholder="Email" name="email" [(ngModel)]="email" required="required"><br>
+    <input class="nombrepelicula borrar-texto" type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required="required"><br>
+    <button class="borrar borrar-texto" type="submit" (click)="register()">Registrarce</button><br>
+    <router-outlet></router-outlet>
+    </div>

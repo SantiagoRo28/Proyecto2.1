@@ -8,6 +8,15 @@ import {HttpClient} from '@angular/common/http'
 import {HttpClientModule} from '@angular/common/http'
 
 
+export class AuthenticationService {
+  
+  constructor(private auth: AngularFireAuth) {
+  }
+  
+  /* Sign in */
+  
+}
+
 export class AuthService {
   userData: any;
 
@@ -32,15 +41,16 @@ export class AuthService {
 
 export class LoginObject {
 
- username: string;
+  constructor(private authenticationService:AuthenticationService) {}
+ 
+  username: string;
  password: string;
    email: string;
    id: string;
 
-
-  constructor() {}
-
+   
   login() {
+    this.authenticationService;
     console.log(this.username);
     console.log(this.password);
     console.log(this.email);
