@@ -7,64 +7,6 @@ import {Observable} from "rxjs";
 import {HttpClient} from '@angular/common/http'
 import {HttpClientModule} from '@angular/common/http'
 
-
-export class AuthenticationService {
-  
-  constructor(private auth: AngularFireAuth) {
-  }
-  
-  /* Sign in */
-  
-}
-
-export class AuthService {
-  userData: any;
-
-  constructor(
-    public asf: AngularFirestore,
-    public afAuth: AngularFireAuth,
-    public router: Router,
-    public ngZone: NgZone,
-  ) {
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user'));
-      }else{
-        localStorage.setItem('user', null);
-        JSON.parse(localStorage.getItem('user'));
-      }
-    })
-  }
-}
-
-export class LoginObject {
-
-  constructor(private authenticationService:AuthenticationService) {}
- 
-  username: string;
- password: string;
-   email: string;
-   id: string;
-
-   
-  login() {
-    this.authenticationService;
-    console.log(this.username);
-    console.log(this.password);
-    console.log(this.email);
-  }
-}
-
-export interface Viedojuegos{
-  titulo: string;
-  tipo: string;
-  duracion: string;
-  imagen: string;
-  creador: string;
-}
-
 export class Session {
   public token: string;
   public user: User;
